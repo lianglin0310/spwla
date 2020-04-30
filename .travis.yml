@@ -54,3 +54,10 @@ notifications:
   email:
     on_success: never
     on_failure: always
+deploy:
+  provider: pypi
+  user: "lianglin0310"
+  password:
+    secure: VzI9JpbusuHyjBUSIZOURvSCMgFzYwEo2y54e1y3AdtfzQ/waT4Uan5lS3Q9xAsmU/nRyDGeGJjseR3z66yiblMwEHh13+ccgd6YJDnedfCHLFh/ge4Fy+63vb3kFKjpjFGwn6/r/5dj/EIalNsbSs0379S3vXUBh1ZV/isFDf01SzWaiBJS5Z++WF3mOjcA+HNTBi43fJ/QZLmMZMmMgblH7+PgASrukoODt6yW0m07wjBVGhiUINFCGZVBfajGHA+eOzEuNzUKBAtlsVmOVPuJK6HUQ0xJmQ/2yMEC/lSbHVJqcsTa2cTIDvqI3YwYAK0USLs4RadrxQqziS0ZJhUNZd/dzZ/+yhmUcWkTcJnDWjUHYpMwYM9LVxUILN17VKyshzgcb/43I6rLlueC7Z9QGJR4Lo8crBNOa6sHPVfUTuiCe41wNyhi/WBmNagVAKr03PFwelUYcv2jMz4NIBtIa8opoZY1F6jxByFSXUdaVdbqrJEgoKRlVRexVgMNUFqP6N+AYQyDRb9YYQSqH+eiqwBzY0UcoC0cJDIvsCydRT1hANaTLj6ZJW1uH90wDexT+W3T4NEjbe+/WAKqlsTbNN9Cn8Toa2FjNq88CCxHu5m9ucMZBc97sQRDHiznt/+I6PEngPERXKJvkDNQN1qPtaJCOi5YKiM6L3xcyo8=
+  on:
+    tags: true
