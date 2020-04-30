@@ -1,7 +1,8 @@
 """Functions for computing resistivity from saturation
 """
 
-#import numpy as np
+
+# import numpy as np
 
 
 def archie(sw, poro, m, n, a=1):
@@ -31,5 +32,3 @@ def archie(sw, poro, m, n, a=1):
     rt = a * poro**m * sw**n
 
     return rt
-
-
