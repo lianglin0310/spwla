@@ -2,9 +2,6 @@
 """
 
 
-# import numpy as np
-
-
 def archie(sw, poro, m, n, a=1):
     """Compute the formation resistivity.
 
@@ -29,6 +26,7 @@ def archie(sw, poro, m, n, a=1):
         >>> rt = archie(1.0, 0.2, 2, 2, 1)
         0.04
     """
+    
     rt = a * poro**m * sw**n
 
     return rt
