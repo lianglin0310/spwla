@@ -23,15 +23,15 @@ def read(*names, **kwargs):
         return fh.read()
 
 
-def local_scheme(version):  # add by LL
+def local_scheme(version):               # add by LL
     return ""
 
 
 setup(
     name='spwla',
     use_scm_version={
-        # 'local_scheme': 'dirty-tag',  # comment by LL
-        'local_scheme': local_scheme,  # add by LL
+        # 'local_scheme': 'dirty-tag',               # comment by LL
+        'local_scheme': local_scheme,      # add by LL
         'write_to': 'src/spwla/_version.py',
         'fallback_version': '0.0.0',
     },
