@@ -59,8 +59,8 @@ deploy:
   user: "lianglin0310"
   password:
     secure: "UJ308OafkwY6D7fmz4KdSG97ZbplbtoVk7H/UXXMK1pxhUl9Z9aTUnTqxywkMHAR7XfgSe1nRpRWyVPp1s0wa9QK4p8xywZNtUOX0bgTd57j3daXYx6J7Swyu9Qvk+ViPWPPI0tgO4Asb0TAhu+jmZsFMEwmYYutwSmd+6iqF/0vkRlTr0tvKgtccD3ED2zt/f0bfjTcD707sQ0fRgs5fZUAB3bDGGtQxn/n+5bC7z/VbF77c0/boSuy7wqC3mf7yobaoq59gWAxjUo0DlszLRYA+7OZvAb8TmCshWcgxzIMkRIhVLH6cpwRbdmis7fkDEaaI81WpAFaLMcbUp2xdqnnoC2Ty+0c5w2ILVwInkWq+IepX/PKvaLOvKB1ytl2yTYVudFdSIkFi4ZLd8oJaVzzX/REdJ8BuS6UARcjzrQzKp+Z0r7Y2IKywczEzBMgWX88tedleqt5Ljt7idpmPPuhuAbEJhczpkR3ITmi5ZTIu+oMGo+sv2dr/W+zOYnpgFcH9skHV1PJ4IbMNDuJLSHrcRt7u0LiVDAmGbwWVIAMQLeRufK5i93nv4zIH65fr6jElg2tMVmiyBhCNS4wB2LXknHVGl8Ft4Fl0uzZV1tAqKJdO9TXLiAZD+4HJCr22tx1V5g5HPXMRi993ofNm6fg6kCrBktkpT19JbULpxs="
-  skip_existing: true
-  cleanup: true
+  skip_cleanup: true
   distributions: sdist bdist_wheel
   on:
     tags: true
+    repo: lianglin0310/spwla
