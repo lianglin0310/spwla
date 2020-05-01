@@ -23,10 +23,6 @@ Overview
     :alt: Travis-CI Build Status
     :target: https://travis-ci.org/lianglin0310/spwla
 
-.. |appveyor| image:: https://ci.appveyor.com/api/projects/status/github/lianglin0310/spwla?branch=master&svg=true
-    :alt: AppVeyor Build Status
-    :target: https://ci.appveyor.com/project/lianglin0310/spwla
-
 .. |requires| image:: https://requires.io/github/lianglin0310/spwla/requirements.svg?branch=master
     :alt: Requirements Status
     :target: https://requires.io/github/lianglin0310/spwla/requirements/?branch=master
