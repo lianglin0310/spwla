@@ -3,63 +3,63 @@ dist: xenial
 cache: false
 env:
   global:
-    - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
-    - SEGFAULT_SIGNALS=all
+  - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+  - SEGFAULT_SIGNALS=all
 matrix:
   include:
-    - python: '3.6'
-      env:
-        - TOXENV=check
-    - python: '3.6'
-      env:
-        - TOXENV=docs
-    - env:
-        - TOXENV=py27,codecov
-      python: '2.7'
-    - env:
-        - TOXENV=py35,codecov
-      python: '3.5'
-    - env:
-        - TOXENV=py36,codecov
-      python: '3.6'
-    - env:
-        - TOXENV=py37,codecov
-      python: '3.7'
-    - env:
-        - TOXENV=py38,codecov
-      python: '3.8'
-    - env:
-        - TOXENV=pypy,codecov
-      python: 'pypy'
-    - env:
-        - TOXENV=pypy3,codecov
-        - TOXPYTHON=pypy3
-      python: 'pypy3'
+  - python: '3.6'
+    env:
+    - TOXENV=check
+  - python: '3.6'
+    env:
+    - TOXENV=docs
+  - env:
+    - TOXENV=py27,codecov
+    python: '2.7'
+  - env:
+    - TOXENV=py35,codecov
+    python: '3.5'
+  - env:
+    - TOXENV=py36,codecov
+    python: '3.6'
+  - env:
+    - TOXENV=py37,codecov
+    python: '3.7'
+  - env:
+    - TOXENV=py38,codecov
+    python: '3.8'
+  - env:
+    - TOXENV=pypy,codecov
+    python: pypy
+  - env:
+    - TOXENV=pypy3,codecov
+    - TOXPYTHON=pypy3
+    python: pypy3
 before_install:
-  - python --version
-  - uname -a
-  - lsb_release -a || true
+- python --version
+- uname -a
+- lsb_release -a || true
 install:
-  - python -mpip install --progress-bar=off tox -rci/requirements.txt
-  - virtualenv --version
-  - easy_install --version
-  - pip --version
-  - tox --version
+- python -mpip install --progress-bar=off tox -rci/requirements.txt
+- virtualenv --version
+- easy_install --version
+- pip --version
+- tox --version
 script:
-  - tox -v
+- tox -v
 after_failure:
-  - more .tox/log/* | cat
-  - more .tox/*/log/* | cat
+- more .tox/log/* | cat
+- more .tox/*/log/* | cat
 notifications:
   email:
     on_success: never
     on_failure: always
 deploy:
   provider: pypi
-  user: "lianglin0310"
+  user: lianglin0310
   password:
-    secure: "UJ308OafkwY6D7fmz4KdSG97ZbplbtoVk7H/UXXMK1pxhUl9Z9aTUnTqxywkMHAR7XfgSe1nRpRWyVPp1s0wa9QK4p8xywZNtUOX0bgTd57j3daXYx6J7Swyu9Qvk+ViPWPPI0tgO4Asb0TAhu+jmZsFMEwmYYutwSmd+6iqF/0vkRlTr0tvKgtccD3ED2zt/f0bfjTcD707sQ0fRgs5fZUAB3bDGGtQxn/n+5bC7z/VbF77c0/boSuy7wqC3mf7yobaoq59gWAxjUo0DlszLRYA+7OZvAb8TmCshWcgxzIMkRIhVLH6cpwRbdmis7fkDEaaI81WpAFaLMcbUp2xdqnnoC2Ty+0c5w2ILVwInkWq+IepX/PKvaLOvKB1ytl2yTYVudFdSIkFi4ZLd8oJaVzzX/REdJ8BuS6UARcjzrQzKp+Z0r7Y2IKywczEzBMgWX88tedleqt5Ljt7idpmPPuhuAbEJhczpkR3ITmi5ZTIu+oMGo+sv2dr/W+zOYnpgFcH9skHV1PJ4IbMNDuJLSHrcRt7u0LiVDAmGbwWVIAMQLeRufK5i93nv4zIH65fr6jElg2tMVmiyBhCNS4wB2LXknHVGl8Ft4Fl0uzZV1tAqKJdO9TXLiAZD+4HJCr22tx1V5g5HPXMRi993ofNm6fg6kCrBktkpT19JbULpxs="
-  skip_cleanup: true
+    secure: Q5/CBt6XwuUTvvwUWWZpVGEwpEwAJpZnD+cg7qUCYxcRT6fXri7cxAAtlV8gVEWwy0RWYdLNr/ixMV/9irInKXBQx6HpCwzpeZT/sBxZcX8hvJz5JT3aJB/iodwmu+JM00RQNs2zJHtqVUl89wu2oSNDxE+RHGXTvwBiYc7Bd0bjFUC9lJy4aE1QWuJTEV0zH3pWEDeLuIcmkdHHy17CvctuiTB0qjyNiuuEYbOG9C2c/lIcRU3u5usxavkTzQ28bwcQOEiKZPfbJT2sZkAn1ev6oRHJj1AmhJcgd+hm/fJZjQcTsDg/U8pzqV0G/CIC7V2kghhDwMYLcBA1Zas/5rxRSpB1wmb7I3N5cT44Kz6joFT7H+blYJdrUaleNY0vMcr+cq29v0wYDdzMfgUbSTQYjU/YEtRZiYt/oizNZnGV8sPfNlYmueh8RQ1encD+MvURuOlPzkyCf6yjGGCWrQ1nBOHXRtTYhk0zuwha56/Nb1vdCw5+yxwKjxkJ/iJR0iVFYXr447eacOmywWidgnH6UZkw59Iyy8VE8yef3Zf0mBXV680Bm2Np/lk7GEfBOA0IyIn2pu5oLcZjgiWWpUc3aGOxsVFxvtA+QKxFStehH57NmivoFB9l2Dqy/T4h2UAuOhiE8q8+QOVfhKUb9hZ9sYsyR0ZSQCa6d4dLAnU=
+  skip_existing: true
   distributions: sdist bdist_wheel
   on:
     tags: true
