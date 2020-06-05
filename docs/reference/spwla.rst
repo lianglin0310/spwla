@@ -5,5 +5,5 @@ spwla
 
     from spwla import *
 
-.. automodule:: spwla.resistivity
+.. automodule:: spwla
     :members:
